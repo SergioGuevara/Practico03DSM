@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "647500714212",
+    "firebase_url": "https://desafio-3-dsm-default-rtdb.firebaseio.com",
+    "project_id": "desafio-3-dsm",
+    "storage_bucket": "desafio-3-dsm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:647500714212:android:bd4047e7de4dbcaf321cf1",
+        "android_client_info": {
+          "package_name": "sv.edu.udb.practico03dsm"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZsyK66CXh9MGX-Ckl1y_RQUrWK3qXxAU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
