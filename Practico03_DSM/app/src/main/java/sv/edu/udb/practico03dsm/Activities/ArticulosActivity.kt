@@ -1,23 +1,23 @@
-package sv.edu.udb.practico03dsm
+package sv.edu.udb.practico03dsm.Activities
 
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
+import android.widget.Button
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.firebase.ui.database.FirebaseRecyclerOptions
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.database.FirebaseDatabase
 import sv.edu.udb.practico03dsm.Adapter.RecursosAdapter
+import sv.edu.udb.practico03dsm.MainActivity
 import sv.edu.udb.practico03dsm.Model.ModelRecursos
-import android.net.Uri
-import android.widget.Button
-import sv.edu.udb.practico03dsm.Activities.MenuActivity
+import sv.edu.udb.practico03dsm.R
 
-
-class MainActivity : AppCompatActivity() {
+class ArticulosActivity : AppCompatActivity() {
     private lateinit var mainAdapter: RecursosAdapter
     private lateinit var recyclerView: RecyclerView
     private lateinit var btnEdit: Button
@@ -25,14 +25,14 @@ class MainActivity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_articulos)
         val btnOpcion1: Button = findViewById(R.id.menuregresar)
 
 
         btnOpcion1.setOnClickListener{
 
-            val intent = Intent(this, MenuActivity::class.java)
-            startActivity(intent)
+                val intent = Intent(this, MenuActivity::class.java)
+                startActivity(intent)
 
         }
         recyclerView = findViewById(R.id.rv)
@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
 
         val options = FirebaseRecyclerOptions.Builder<ModelRecursos>()
             .setQuery(
-                FirebaseDatabase.getInstance().reference.child("recursos").child("libros"),
+                FirebaseDatabase.getInstance().reference.child("recursos").child("videos"),
                 ModelRecursos::class.java
             )
             .build()
@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
         recyclerView.adapter = mainAdapter
 
 
-        }
+    }
 
 
     override fun onStart() {
@@ -60,7 +60,5 @@ class MainActivity : AppCompatActivity() {
         super.onStop()
         mainAdapter.stopListening()
     }
-
-
 
 }
